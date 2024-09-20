@@ -4,7 +4,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.*;
 
-public class QuickSortExample {
+public class quicksort {
 
     public static void main(String[] args) {
         List<Integer> numbers = readNumbersFromFile("input_sort.txt");
