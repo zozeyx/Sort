@@ -44,7 +44,7 @@ int main() {
 
     // 실행 시간 출력 (밀리초로 변환)
     double running_time_ms = ((double)(end_time - start_time) / CLOCKS_PER_SEC) * 1000; // 밀리초로 변환
-    printf("실행 시간: %.3f 밀리초\n", running_time_ms);
+    printf("Selection Sort 실행 시간: %f 밀리초\n", running_time_ms);
 
     free(B); // 동적 할당된 메모리 해제
     return 0;
