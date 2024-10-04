@@ -42,9 +42,9 @@ int main() {
         printf("70번째 숫자가 존재하지 않습니다.\n");
     }
 
-    // 실행 시간 출력
-    double running_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-    printf("실행 시간: %f 초\n", running_time);
+    // 실행 시간 출력 (밀리초로 변환)
+    double running_time_ms = ((double)(end_time - start_time) / CLOCKS_PER_SEC) * 1000; // 밀리초로 변환
+    printf("실행 시간: %.3f 밀리초\n", running_time_ms);
 
     free(B); // 동적 할당된 메모리 해제
     return 0;
