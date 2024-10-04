@@ -1,6 +1,3 @@
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.*;
 import java.util.*;
 
@@ -13,7 +10,7 @@ public class quicksort {
         quickSort(numbers, 0, numbers.size() - 1);
         long endTime = System.nanoTime(); // 시간 측정 종료
 
-        writeNumbersToExcel(numbers, "output_quick_sort.xlsx");
+        writeNumbersToTextFile(numbers, "output_quick_sort.txt");
         
         System.out.println("정렬 완료: " + (endTime - startTime) + " 나노초");
     }
@@ -52,26 +49,13 @@ public class quicksort {
         return i + 1;
     }
 
-    public static void writeNumbersToExcel(List<Integer> numbers, String filename) {
-        Workbook workbook = new XSSFWorkbook(); // 새로운 엑셀 워크북 생성
-        Sheet sheet = workbook.createSheet("Sorted Numbers"); // 시트 생성
-
-        for (int i = 0; i < numbers.size(); i++) {
-            Row row = sheet.createRow(i); // 새로운 행 생성
-            Cell cell = row.createCell(0); // 첫 번째 열에 셀 생성
-            cell.setCellValue(numbers.get(i)); // 셀에 값 설정
-        }
-
-        try (FileOutputStream fileOut = new FileOutputStream(filename)) {
-            workbook.write(fileOut); // 엑셀 파일로 쓰기
+    public static void writeNumbersToTextFile(List<Integer> numbers, String filename) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            for (int number : numbers) {
+                writer.write(number + "\n");
+            }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                workbook.close(); // 워크북 닫기
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
