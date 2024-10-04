@@ -64,7 +64,7 @@ int main() {
     auto end = chrono::high_resolution_clock::now();
     
     chrono::duration<double> running_time = end - start;
-    cout << "Merge Sort 실행 시간: " << running_time.count() << " 초" << endl;
+    cout << "Merge Sort 실행 시간: " << running_time.count() << " 밀리초" << endl;
 
     // 정렬된 데이터를 output.txt 파일로 저장
     ofstream outputFile("output.txt");
