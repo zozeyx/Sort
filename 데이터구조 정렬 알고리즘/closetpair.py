@@ -76,4 +76,4 @@ if __name__ == "__main__":
 
     # 결과 출력
     print(f"가장 가까운 쌍: {p1} 및 {p2} (최단 거리: {distance})")
-    print(f"Closet Pair 실행 시간: {(end_time - start_time) * 1000:f} 밀리초")  # 밀리초 단위로 출력
+    print(f"Closet Pair Algorithm 실행 시간: {(end_time - start_time) * 1000:f} 밀리초")  # 밀리초 단위로 출력
