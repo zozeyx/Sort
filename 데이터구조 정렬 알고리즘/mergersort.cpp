@@ -2,7 +2,6 @@
 #include <fstream>
 #include <vector>
 #include <chrono>
-#include "xlsxwriter.h"  // libxlsxwriter 라이브러리 사용
 
 using namespace std;
 
@@ -67,19 +66,14 @@ int main() {
     chrono::duration<double> running_time = end - start;
     cout << "Merge Sort 실행 시간: " << running_time.count() << " 초" << endl;
 
-    // 정렬된 데이터를 output_merge_sort.xlsx 파일로 저장
-    lxw_workbook  *workbook  = workbook_new("output_merge_sort.xlsx");
-    lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
-
-    // 데이터 작성
+    // 정렬된 데이터를 output.txt 파일로 저장
+    ofstream outputFile("output.txt");
     for (size_t i = 0; i < data.size(); ++i) {
-        worksheet_write_number(worksheet, i, 0, data[i], NULL);
+        outputFile << data[i] << endl;
     }
+    outputFile.close();
 
-    // 엑셀 파일 저장
-    workbook_close(workbook);
-
-    cout << "정렬 결과가 output_merge_sort.xlsx 파일에 저장되었습니다." << endl;
+    cout << "정렬 결과가 output.txt 파일에 저장되었습니다." << endl;
 
     return 0;
 }
