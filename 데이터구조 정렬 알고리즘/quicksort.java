@@ -6,13 +6,13 @@ public class quicksort {
     public static void main(String[] args) {
         List<Integer> numbers = readNumbersFromFile("input_sort.txt");
         
-        long startTime = System.nanoTime(); // 시간 측정 시작
+        long startTime = System.currentTimeMillis(); // 시간 측정 시작
         quickSort(numbers, 0, numbers.size() - 1);
-        long endTime = System.nanoTime(); // 시간 측정 종료
-
+        long endTime = System.currentTimeMillis(); // 시간 측정 종료
+        
         writeNumbersToTextFile(numbers, "output_quick_sort.txt");
         
-        System.out.println("정렬 완료: " + (endTime - startTime) + " 나노초");
+        System.out.println("정렬 완료: " + durationInMillis + " 밀리초");
     }
 
     public static List<Integer> readNumbersFromFile(String filename) {
