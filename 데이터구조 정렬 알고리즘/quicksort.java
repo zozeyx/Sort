@@ -9,6 +9,7 @@ public class quicksort {
         long startTime = System.currentTimeMillis(); // 시간 측정 시작
         quickSort(numbers, 0, numbers.size() - 1);
         long endTime = System.currentTimeMillis(); // 시간 측정 종료
+        long durationInMillis = endTime - startTime;
         
         writeNumbersToTextFile(numbers, "output_quick_sort.txt");
         
