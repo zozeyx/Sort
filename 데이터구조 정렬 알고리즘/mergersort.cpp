@@ -73,7 +73,7 @@ int main() {
     }
     outputFile.close();
 
-    cout << "정렬 결과가 output.txt 파일에 저장되었습니다." << endl;
+    cout << "정렬 결과가 output_merge_sort.txt 파일에 저장되었습니다." << endl;
 
     return 0;
 }
