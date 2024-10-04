@@ -12,8 +12,9 @@ public class quicksort {
         long durationInMillis = endTime - startTime;
         
         writeNumbersToTextFile(numbers, "output_quick_sort.txt");
-        
-        System.out.println("정렬 완료: " + durationInMillis + " 밀리초");
+
+        System.out.println("정렬 결과가 output_quick_sort.txt 파일에 저장되었습니다. ");
+        System.out.println("Quick Sort 실행시간: " + durationInMillis + " 밀리초");
     }
 
     public static List<Integer> readNumbersFromFile(String filename) {
